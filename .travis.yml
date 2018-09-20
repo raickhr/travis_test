@@ -21,10 +21,28 @@ before install:
   - sudo apt-get install -qq python-numpy python-scipy python-matplotlib
 
 script: 
-  - coverage run --source=final_project/final_project.py setup.py test
+  - coverage run setup.py test
   - coverage report -m
 
 after_success: coveralls
+
 #language: python
 #python: 2.7
 
+# Command to run tests, e.g. python setup.py test
+# script: tox
+
+# Assuming you have installed the travis-ci CLI tool, after you
+# create the Github repo and add it to Travis, run the
+# following command to finish PyPI deployment setup:
+# $ travis encrypt --add deploy.password
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: raickhr
+  password:
+    secure: PLEASE_REPLACE_ME
+  on:
+    tags: true
+    repo: raickhr/travis_test
+    python: 3.6
