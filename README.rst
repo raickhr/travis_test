@@ -18,6 +18,9 @@ travis_test
      :target: https://pyup.io/repos/github/raickhr/travis_test/
      :alt: Updates
 
+.. image:: https://coveralls.io/repos/github/raickhr/travis_test/badge.svg?branch=master
+     :target: https://coveralls.io/github/raickhr/travis_test?branch=master
+
 
 
 This is tutorial for travis test
